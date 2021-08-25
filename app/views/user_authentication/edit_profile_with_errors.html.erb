@@ -1,0 +1,87 @@
+<div >
+  <h5>
+    Edit Account Information
+  </h5>
+
+  <% if @user.errors.any? %>
+  <% @user.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+  <% end %>
+  <div>
+    <form action="/modify_user" method="post">
+              
+      <div>
+        <label for="email_box">Email</label>
+          
+        <input id="email_box" name="query_email" value="<%= @current_user.email %>">
+          
+      </div>
+                                    
+      <div>
+        <label for="first_name_box">First name</label>
+          
+        <input id="first_name_box" name="query_first_name" value="<%= @current_user.first_name %>">
+          
+      </div>
+                      
+      <div>
+        <label for="last_name_box">Last name</label>
+          
+        <input id="last_name_box" name="query_last_name" value="<%= @current_user.last_name %>">
+          
+      </div>
+                      
+      <div>
+        <label for="city_box">City</label>
+          
+        <input id="city_box" name="query_city" value="<%= @current_user.city %>">
+          
+      </div>
+                      
+      <div>
+        <label for="bb_interest_box">Bb interest</label>
+          
+        <input id="bb_interest_box" name="query_bb_interest" value="<%= @current_user.bb_interest %>">
+          
+      </div>
+                      
+      <div>
+        <label for="current_employer_box">Current employer</label>
+          
+        <input id="current_employer_box" name="query_current_employer" value="<%= @current_user.current_employer %>">
+          
+      </div>
+                      
+      <div>
+        <label for="bio_box">Bio</label>
+          
+        <input id="bio_box" name="query_bio" value="<%= @current_user.bio %>">
+          
+      </div>
+                      
+      <div>
+        <label for="image_box">Image</label>
+          
+        <input id="image_box" name="query_image" value="<%= @current_user.image %>">
+          
+      </div>
+              
+      <div>
+        <label for="password_box">Password</label>
+        <input id="password_box" name="query_password" placeholder="Choose a new password..." type="password">
+      </div>
+    
+      <div>
+        <label for="password_confirmation_box">Password Confirmation</label>
+        <input id="password_confirmation_box" name="query_password_confirmation" placeholder="Confirm your new password..." type="password">
+      </div>
+
+      <button>
+        Update account
+      </button>
+    </form>
+  </div>
+</div>
