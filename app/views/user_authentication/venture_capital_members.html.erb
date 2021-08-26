@@ -1,2 +1,70 @@
 <h1>Members Focused on Venture Capital</h1>
 
+<hr>
+
+<a href="/startups_members">Members Focused on Startups</a>
+
+<table border="1">
+  <tr>
+
+    <th>Image</th>
+
+    <th>Name</th>
+
+    <th>Email</th>
+
+    <th>City</th>
+
+    <th>Current Employer</th>
+
+    <th>Bio</th>
+
+  </tr>
+
+<% @users.where({ :bb_interest => "vc" }).each do |user| %>
+
+  <tr>
+
+    <td>
+      <img src="<%= user.image %>">
+    </td>
+
+    <td>
+      <%= user.name %>
+    </td>
+
+    <td>
+      <%= user.email %>
+    </td>
+
+    <td>
+      <%= user.city %>
+    </td>
+
+    <td>
+      <%= user.current_employer %>
+    </td>
+
+    <td>
+      <%= user.bio %>
+    </td>
+
+  </tr>
+  <% end %>
+</table>
+
+<%= search_form_for @q, url: "/venture_capital_members" do |f| %>
+  <p>Narrow results:</p>
+
+  <div>
+    <%= f.label :city, "city" %>
+    <%= f.text_field :city_cont, :placeholder => "Enter a few characters" %>
+  </div>
+
+  <%= f.submit :class => "btn btn-primary btn-block" %>
+
+<% end %>
+
+<div> <a href="/member_homepage">Back to Member Homepage</a> </div>
+
+<div> <a href="/user_sign_out">Sign Out</a> </div>

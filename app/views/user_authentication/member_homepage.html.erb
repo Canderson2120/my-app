@@ -1,5 +1,11 @@
-<h1>Welcome, {user first name}! </<h1>
+<h1>
+Welcome, <%= @current_user.first_name %>!
+</h1>
 
-<button>Edit Account Information</button>
-<button>Members focused on Venture Capital</button>
-<button>Members focused on Startups</button>
+<ul>
+<p> <a href="/edit_user_profile">Edit Account Information</a></p>
+<p> <a href="/venture_capital_members">Members focused on Venture Capital</a> </p>
+<p> <a href="/startups_members">Members focused on Startups</a></p>
+</ul>
+
+<a href="/user_sign_out">Sign Out</a>
